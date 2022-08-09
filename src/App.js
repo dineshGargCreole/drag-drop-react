@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import OneCard from './components/OneCard';
+import TwoCard from './components/TwoCard';
+import { ChakraProvider } from '@chakra-ui/react'
+import {HTML5Backend} from 'react-dnd-html5-backend'
+import {DndProvider} from 'react-dnd'
+import InnerTwoCard from './components/InnerTwoCard';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <OneCard /> */}
+      <DndProvider backend={HTML5Backend}>
+        <ChakraProvider>
+          {/* <TwoCard /> */}
+          <InnerTwoCard />
+        </ChakraProvider>
+      </DndProvider>
     </div>
   );
 }
